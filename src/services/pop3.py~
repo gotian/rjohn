@@ -1,0 +1,83 @@
+# -*- coding: utf-8 -*-
+
+'''
+
+@author: marcin
+'''
+
+import socket
+import time
+from services.service import ServiceException
+from optparse import OptionGroup
+
+class Pop3ServiceException(ServiceException):
+    pass
+
+POP3_PORT = 110
+
+class Pop3:
+    def __init__(self, config):
+        self.hostname = config["hostname"]
+        self.port = POP3_PORT
+        if "port" in config:
+            self.port = config["port"]
+        self.sleep = 0
+        if "sleep" in config:
+            self.sleep = config["sleep"]
+            
+    def __create_socket(self):
+        return socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    
+    def __open(self):
+        sock = self.__create_socket()
+        sock.connect((self.hostname, self.port))
+        return sock
+        
+    def __close(self, sock):
+        sock.close()
+
+    def auth(self, username, password):
+        s = self.__open()
+        
+        time.sleep(float(self.sleep))
+        
+        data_r = s.recv(1024)
+        
+        data_r = data_r.decode().split()[0]
+        if (data_r == '-ERR'):
+	    print(data_r[:len(data_r)-1])	    
+            raise Pop3ServiceException(_("Serwer nie jest gotowy"))
+        
+        username = "USER " + username + '\r\n'
+        s.send(username)
+        data_r = s.recv(1024)
+        
+        data_r = data_r.decode().split()[0]
+        if (data_r == '-ERR'):
+            raise Pop3ServiceException(_("Komunikacja nie przebiega prawidłowo"))
+        
+        password = "PASS " + password + '\r\n'
+        s.send(password)
+        data_r = s.recv(1024)
+        
+        data_r = data_r.decode().split()[0]
+        if (data_r == '-ERR'):
+            self.__close(s)
+            return False
+        else:
+            self.__close(s)
+            return True
+        
+def getOptionGroup(parser):
+    group = OptionGroup(parser, _("Opcje dla modulu Pop3"),
+                        _("sleep=CZAS - odczekanie po polaczeniu"))
+    return group
+
+def parseOptionGroup(option):
+    config = {}
+    option = option.split(",")
+    for x in option:
+        x = x.split("=")
+        config[x[0]]=x[1]
+        
+    return config
