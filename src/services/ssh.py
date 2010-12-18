@@ -4,6 +4,9 @@
 Moduł obsługujący protokuł SSH.
 
 Protokół ten jest dokładnie opisany w dokumentach RFC 4250, RFC 4251, RFC 4252 i RFC 4253.
+Kod tego modułu został stworzony na podstawie kodu biblioteki paramiko (http://www.lag.net/paramiko/), 
+napisanej przez Robey Pointera <robeypointer@gmail.com> i udostępnionej na licencji LGPL.
+Klasy które zawierają kod biblioteki paramiko to: DHGroup1, Transport i Packet.
 """
 
 import socket
@@ -172,6 +175,7 @@ def parse_from_long(n):
 class DHGroup1:
     
     """Klasa implementująca protokuł wymiany kluczy Diffiego–Hellmana.
+    Napisana z użyciem kodu modułu paramiko.
     """
     
     def __init__(self, transport):
@@ -209,6 +213,7 @@ class DHGroup1:
 class Transport:
     
     """Klasa implementująca warstwę transportową protokołu SSH.
+    Napisana z użyciem kodu modułu paramiko.
     """
     
     __VERSION = '2.0'
@@ -610,6 +615,7 @@ class Transport:
 class Packet:
     
     """Klasa definiująca pakiet w protokole SSH.
+    Napisana z użyciem kodu modułu paramiko.
     """
     
     def __init__(self, content=''):
