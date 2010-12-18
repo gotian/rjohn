@@ -43,6 +43,9 @@ class Imap:
         self.sleep = 0
         if "sleep" in config:
             self.sleep = config["sleep"]
+        self.auth_info = 0
+        if "auth-info" in config:
+            self.auth_info = 1
             
     def create_socket(self):
         """Zwraca stworzony socket."""
@@ -85,6 +88,9 @@ class Imap:
         if (status == None):
             raise ImapServiceException(_("Komunikacja nie przebiega prawidłowo"))
         
+        if self.auth_info == "1":
+            print data_r[:-2]
+        
         res = status.groups()[0]
         if res == "OK":
             self.__close(s)
@@ -98,7 +104,8 @@ class Imap:
 def getOptionGroup(parser):
     """Zwraca pomoc dla grupy opcji."""
     group = OptionGroup(parser, _("Opcje dla modulu Imap"),
-                        _("sleep=CZAS - odczekanie po polaczeniu"))
+                        _("sleep=CZAS - odczekanie po polaczeniu, "
+                         "auth-info=0/1 - wyswietla informacje dodatkowe przy uwierzytelnieniu"))
     return group
 
 def parseOptionGroup(option):

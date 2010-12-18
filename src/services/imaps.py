@@ -64,7 +64,7 @@ def getOptionGroup(parser):
                         _("sleep=CZAS - odczekanie po polaczeniu, "
                           "certfile=PLIK - certyfikat dla ssl, " 
                           "keyfile=PLIK - klucz dla ssl, " 
-                          "auth-info=0/1 - wyswietla informacje dodatkowa przy uwierzytelnieniu"))
+                          "auth-info=0/1 - wyswietla informacje dodatkowe przy uwierzytelnieniu"))
     return group
 
 def parseOptionGroup(option):
