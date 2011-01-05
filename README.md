@@ -16,6 +16,7 @@ Program dostarczany jest w postaci kodu źródłowego wykonywanego na interprete
 Program można uruchomić na wiele sposobów poniżej przedstawione są dwa z nich. Oba dotyczą instalacji w systemie operacyjnym Linux.
 
 Pierwszy, polega na ręcznym wywołaniu interpretera i składa się z kolejnych kroków:
+
 * przekopiować pliki programu w dowolne miejsce
 * ustawić zmienną PYTHONPATH, na sciezka/rjohn/src gdzie sciezka to ścieżka do katalogu w którym znajduje się rjohn
 * wywołać interpreter python (lub python2) w celu uruchomienia rjohn/src/main/main.py
@@ -26,6 +27,7 @@ przykład:
 	/usr/bin/python2 /home/marcin/rjohn/src/main/main.py
 	
 Drugi stanowi uproszczenie i wykorzystuje skrypt bash-a:
+
 * przekopiować pliki programu w dowolne miejsce
 * uruchomić program poprzez uruchomienie skryptu bash-a rjohn, znajdującego się w katalogu src
 
