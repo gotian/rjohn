@@ -7,6 +7,8 @@ Protokół ten jest dokładnie opisany w dokumentach RFC 4250, RFC 4251, RFC 425
 Kod tego modułu został stworzony na podstawie kodu biblioteki paramiko (http://www.lag.net/paramiko/), 
 napisanej przez Robey Pointera <robeypointer@gmail.com> i udostępnionej na licencji LGPL.
 Klasy które zawierają kod biblioteki paramiko to: DHGroup1, Transport i Packet.
+
+Moduł ten obsługuje jedynie wersję 2 protokołu SSH.
 """
 
 import socket
