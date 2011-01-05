@@ -1,5 +1,0 @@
-#!/bin/sh
-
-export PYTHONPATH=$PYTHONPATH:`pwd`
-
-python main/main.py $@
