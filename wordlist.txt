@@ -18,7 +18,6 @@ secret
 summer
 internet
 service
-
 canada
 hello
 ranger

@@ -11,7 +11,7 @@ import Queue
 from utils.container import Container, FileContainer
 from combinatorics.variation import RangeStringVariation
 from utils.transition import Transition
-import attack
+from main.attack import Attack, Producer, Consumer
 import time
 import pickle
 import sys
@@ -237,7 +237,7 @@ def start_threads(att, flag):
     if config["info_time"] != 0:
         p_timer.start() 
     
-    p = attack.Producer(att, p_event)
+    p = Producer(att, p_event)
     p.setDaemon(True)
     
     # restore czy normalne uruchomienie
@@ -307,7 +307,7 @@ def start_consumers(config):
     c_list = []
     for x in range(config["thread_number"]):
         s = get_service_class(config)
-        c = attack.Consumer(s, Q1, Q2, config)
+        c = Consumer(s, Q1, Q2, config)
         c.setDaemon(True)
         c.start()
         c_list.append(c)
@@ -525,7 +525,7 @@ if __name__ == '__main__':
     Q1 = Queue.Queue(config["thread_number"] * 2)
     Q2 = Queue.Queue()
     t = Transition()
-    att = attack.Attack(uc, wc, wcr, t, Q1, Q2)
+    att = Attack(uc, wc, wcr, t, Q1, Q2)
     
     start_threads(att, True)    
     main()

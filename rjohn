@@ -2,4 +2,4 @@
 
 export PYTHONPATH=$PYTHONPATH:`pwd`/src
 
-python src/main/main.py $@
+python src/main.py $@
