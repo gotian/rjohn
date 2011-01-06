@@ -68,9 +68,9 @@ Pierwszy sposób składa się z następujących kroków:
 Najprościej ustawić zmienne środowiskowe poprzez zakładkę zaawansowane w Moim Komputerze.
 Wywołanie programu w konsoli można sobie uprościć przeciągając nazwy plików (lub katalogów) z Eksplorera Windows.
 
-Drugi sposób dotyczy wywołania binarnej wersji programu. Nie trzeba wówczas posiadać zainstalowanego interpretera języka Python.
+Drugi sposób dotyczy wywołania binarnej wersji programu. Nie trzeba wówczas posiadać zainstalowanego żadnego z wymaganych komponentów (Python i PyCrypto).
 
-* wywołać w konsoli dist\main.exe
+* wywołać w konsoli dist\main.exe, katalog dist znajduje się w katalogu programu
 
 Dodatkowo w systemie muszą znajdować się następujące biblioteki DLL
 
