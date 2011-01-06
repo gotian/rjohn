@@ -15,9 +15,20 @@ rjohn jest oprogramowaniem umożliwiającym przeprowadzanie ataków słownikowyc
 
 Program dostarczany jest w postaci kodu źródłowego wykonywanego na interpreterze języka Python dlatego też nie potrzebuje on bezpośredniej instalacji.
 
+#### Zależności
+
+Zależności należy zainstalować zgodnie z metodami dostępnymi w dystrybucji, a w ostateczności ze źródeł.
+
 ### Windows
 
 Program dostarczany jest albo jakoś źródła albo jako binaria. Żadna z tych wersji nie potrzebuje bezpośredniej instalacji.
+
+#### Zależności
+
+Python 2.x można pobrać z [tej][2] strony, a pakiet zawierający bibliotekę PyCrypto z [tej][3].
+
+[2]:http://www.python.org/download/
+[3]:http://www.voidspace.org.uk/python/modules.shtml
 
 ## Uruchomienie
 
@@ -75,8 +86,8 @@ Wersja binarna została zbudowana w systemie Windows XP (32 bit) i nie gwarantuj
 
 Razem z programem dostarczane są dodatkowe pliki, domyślnie używane przez program w przypadku braku innych.
 
-* wordlist.txt - zawiera zbiór 3157 haseł udostępnionych na stronie [openwall][2]
+* wordlist.txt - zawiera zbiór 3157 haseł udostępnionych na stronie [openwall][4]
 * wordrules.txt - zawiera zbiór reguł przetwarzania słów
 * userlist.txt - zawiera zbiór użytkowników którzy mają być używaniu do uwierzytelnienia podczas ataku
 
-[2]:http://www.openwall.com/wordlists/
+[4]:http://www.openwall.com/wordlists/
