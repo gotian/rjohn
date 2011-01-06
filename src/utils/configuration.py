@@ -142,7 +142,7 @@ class Configuration:
                           help=_("liczba prob w przypadku bledu") + msg7)
         parser.add_option("-d", "--result-file", metavar=msg2,
                           help=_("nazwa pliku z wynikami"))
-        parser.add_option("-j", "--session-save", metavar=msg5, type="float", default=30.0,
+        parser.add_option("-j", "--session-save", metavar=msg5, type="float", default=3600.0,
                           help=_("czas po ktorym sesja zostanie automatycznie zapisana") + msg7)
         
         return parser
