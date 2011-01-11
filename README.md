@@ -57,13 +57,13 @@ przykład:
 	
 ### Windows
 
-Program można uruchomić albo poprzez wywołanie interpretera, albo za pomocą dostarczony binarów.
+Program można uruchomić albo poprzez wywołanie interpretera, albo za pomocą dostarczony binariów.
 
 Pierwszy sposób składa się z następujących kroków:
 
 * przekopiować pliki programu w dowolne miejsce
 * ustawić zmienną środowiskową PYTHONPATH na sciezka\rjohn\src gdzie sciezka to ścieżka do katalogu w którym znajduje się rjohn
-* wywołać interpreter python (lub python2) w celu uruchomienia rjohn\src\main.py
+* wywołać interpreter python.exe w celu uruchomienia rjohn\src\main.py
 
 Najprościej ustawić zmienne środowiskowe poprzez zakładkę zaawansowane w Moim Komputerze.
 Wywołanie programu w konsoli można sobie uprościć przeciągając nazwy plików (lub katalogów) z Eksplorera Windows.
@@ -88,6 +88,6 @@ Razem z programem dostarczane są dodatkowe pliki, domyślnie używane przez pro
 
 * wordlist.txt - zawiera zbiór 3157 haseł udostępnionych na stronie [openwall][4]
 * wordrules.txt - zawiera zbiór reguł przetwarzania słów
-* userlist.txt - zawiera zbiór użytkowników którzy mają być używaniu do uwierzytelnienia podczas ataku
+* userlist.txt - zawiera zbiór użytkowników którzy mają być używani do uwierzytelnienia podczas ataku
 
 [4]:http://www.openwall.com/wordlists/
